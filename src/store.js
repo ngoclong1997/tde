@@ -1,7 +1,3 @@
-/**
- * Created by WebStorm.
- * @author longnn
- */
 
 import {reducers} from './middleware'
 import thunk from 'redux-thunk'

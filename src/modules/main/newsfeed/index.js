@@ -1,9 +1,4 @@
-/**
- * Created by WebStorm.
- * @author longnn
- * @date 04 Apr, 2019
- * @time 00:30
- */
+
 
 import React, {Component} from 'react'
 import {View, StyleSheet, Text} from 'react-native'

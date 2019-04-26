@@ -1,0 +1,4 @@
+#Sat Apr 27 01:58:59 ICT 2019
+base.0=D\:\\.RECYCLE_BIN\\RN\\tde\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

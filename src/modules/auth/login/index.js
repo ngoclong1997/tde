@@ -1,9 +1,4 @@
-/**
- * Created by WebStorm.
- * @author longnn
- * @date 04 Apr, 2019
- * @time 00:27
- */
+
 import React, {Component} from 'react';
 import {View, StyleSheet, Text, Image, Dimensions} from 'react-native'
 import {connect} from 'react-redux';
