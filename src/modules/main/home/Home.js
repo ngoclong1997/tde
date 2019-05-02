@@ -1,7 +1,7 @@
 
 
 import React, {Component} from 'react'
-import {View, StyleSheet, ScrollView, Image, Dimensions} from 'react-native'
+import {View, StyleSheet, ScrollView, Image, Dimensions, TouchableWithoutFeedback} from 'react-native'
 import {connect} from 'react-redux'
 import {bindActionCreators} from "redux"
 import {actions} from '../../../middleware'
@@ -19,7 +19,8 @@ import DemoImage from '../../../../images/khach-san.jpg'
 
 import {Colors} from "../../../utils/styles";
 import Feature from "../../common/Feature";
-import ImageSlider from "react-native-image-slider";
+import Swiper from 'react-native-swiper'
+
 
 const deviceWidth=Dimensions.get('window').width;
 
@@ -33,24 +34,16 @@ class Home extends Component {
 
     render() {
         const {navigation} = this.props
-        const images=[
-            DemoImage,
-            DemoImage,
-            DemoImage
-        ]
+        const images=[DemoImage, DemoImage, DemoImage]
         return (
             <View style={styles.container}>
-                <ImageSlider images={images}
-                             loop={true}
-                             autoPlayWithInterval={1000}
-                             customSlide={({index, item, style, width}) => (
-                                 <View key={index}>
-
-                                 </View>
-                             )}
-
-                />
-
+                <Swiper style={styles.imagesWrapper} activeDotColor={Colors.APP_MAIN}>
+                    {images.map((item, index) => (
+                        <TouchableWithoutFeedback key={index} onPress={() => alert("Hello")} style={{flex: 1}}>
+                            <Image  source={item} style={{width: deviceWidth, height: '100%', resizeMode: 'cover'}}/>
+                        </TouchableWithoutFeedback>
+                    ))}
+                </Swiper>
                 <View style={styles.row}>
                     <Feature onPress={() => navigation.navigate('RoomScreen')} title={'Phòng nghỉ'}
                              image={RoomImage}/>
@@ -86,6 +79,15 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.BACKGROUND
     },
+    imagesWrapper: {
+        
+    },
+    sliderImage: {
+        flex: 1,
+        width: deviceWidth,
+        height: 1000,
+        resizeMode: 'contain'
+    },
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -105,14 +107,16 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
     return {
-        authStates: state.auth
+        authStates: state.auth,
+        homeStates: state.home
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const {auth} = actions
+    const {auth, home} = actions
     return {
         authActions: bindActionCreators(auth, dispatch)
+        homeActions: bindActionCreators(home, dispatch)
     }
 }
 

@@ -11,7 +11,7 @@ import {TouchableRipple} from "react-native-paper";
 import * as Animatable from 'react-native-animatable'
 
 class CustomHeader extends Component {
-
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -51,8 +51,6 @@ class CustomHeader extends Component {
                     </View>
                 </TouchableWithoutFeedback>
 
-
-
                 <Animatable.View ref={this._handleSearchRef} style={{position: 'absolute', zIndex: 3, height: 56, justifyContent: 'center'}}>
                     {this.state.shouldShowSearchBar && <SearchBar
                         containerStyle={styles.searchBarContainer}
@@ -70,7 +68,6 @@ class CustomHeader extends Component {
                     />}
                 </Animatable.View>
                 <Header {...this.props}/>
-
             </View>
         );
     }

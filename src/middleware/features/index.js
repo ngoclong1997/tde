@@ -7,6 +7,7 @@ import * as tour from './tour'
 import * as hotdeal from './hotdeal'
 import * as vehicle from './vehicle'
 import * as place from './place'
+import * as home from './home'
 
 
 export {
@@ -16,5 +17,6 @@ export {
     tour,
     hotdeal,
     vehicle,
-    place
+    place,
+    home
 }

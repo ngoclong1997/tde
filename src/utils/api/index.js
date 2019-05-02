@@ -7,6 +7,7 @@ import * as TourAPI from './TourAPI'
 import * as HotDealAPI from './HotDealAPI'
 import * as VehicleAPI from './VehicleAPI'
 import * as PlaceAPI from './PlaceAPI'
+import * as HomeAPI from './HomeAPI'
 
 export {
     UserAPI,
@@ -15,5 +16,6 @@ export {
     TourAPI,
     HotDealAPI,
     VehicleAPI,
-    PlaceAPI
+    PlaceAPI,
+    HomeAPI
 }
